@@ -1,0 +1,21 @@
+body {
+	font-size:2em;
+}
+.header-logo, .header-navs{
+	background-color:#eb87cf;
+}
+.header-navs-icon:hover, .header-navs-icon{
+	margin-right:20px;
+	text-decoration:none;
+}
+.header-navs-dropdown{
+	float:right; 
+	margin-right:50px; 
+	margin-top:-5px
+}
+.content-navs{
+	background-color:#eb87cf; 
+	min-height:500px; 
+	text-align:center; 
+	font-size:25px
+}

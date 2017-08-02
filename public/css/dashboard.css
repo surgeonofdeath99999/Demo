@@ -1,0 +1,25 @@
+body {
+	font-size:2em;
+	background-color:rgba(238, 238, 238, 0.59)
+}
+.header-logo:hover{
+	color:
+}
+.header-navs-icon:hover, .header-navs-icon{
+	margin-right:20px;
+	text-decoration:none;
+}
+.header-navs-dropdown{
+	float:right; 
+	margin-right:50px; 
+	margin-top:-5px
+}
+.content-navs{
+	min-height:500px; 
+	text-align:center; 
+	font-size:25px
+}
+@font-face{
+	font-family: finitition;
+	src : url(../font/Finitition.ttf);
+}
