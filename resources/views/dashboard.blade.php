@@ -13,43 +13,48 @@
 	</script>
 	
 	<!--BootstrapJS-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	
 	<!--BootstrapCSS 3-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	
-	<!--BootstrapCSS-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	
+
 	<!--CustomCSS-->
 	<link rel="stylesheet" href="css/dashboard.css">
-
-	</head>
+	<script src="js/dashboard.js"></script>
+	<script id="returnScript"></script>
+</head>
 <body>
 		<div class="row">
-			<div class="col-2" style="background-color:rgba(244, 178, 253, 0.52); height:45px;padding-bottom:40px;text-align:center">
+			<div class="col-xs-2" style="background-color:rgba(244, 178, 253, 0.52); height:45px;padding-bottom:40px;text-align:center">
 				<a href="" class="header-logo" style="text-decoration:none; font-family:finitition;color:rgba(19, 17, 17, 0.63);text-shadow:7px 4px 4px #ae7cb5; font-size:35px;">Rookie</a>
 			</div>
-			<div class="col-10" style="background-color:rgba(244, 178, 253, 0.52);">
-				<span style="font-size:20px; float:right; margin-top:8px">
-					<a href="" class="glyphicon glyphicon-globe header-navs-icon" style="color:rgba(37, 55, 70, 0.77);"></a>
+			{{ csrf_field() }}
+			<div class="col-xs-10" style="background-color:rgba(244, 178, 253, 0.52); height:45px">
+				<span>
+					<input class="form-control" style="width:45%;margin-left:10%;margin-top:8px;font-size:15px;height:60%;display:inline-block" name="search" id="searchArea" placeholder="Search..." type="text">
+					<div id="searchItem" class="list-group" style="position:absolute; width:42%;margin-left:10%">
+					</div>
+				</span>
+				<span style="font-size:20px; float:right; margin-top:8px;margin-right:10px">
+					<a href="" class="glyphicon glyphicon-user header-navs-icon" style="color:rgba(37, 55, 70, 0.77);"></a>
 					<a href="" class="glyphicon glyphicon-envelope header-navs-icon" style="color:rgba(37, 55, 70, 0.77);"></a>
 					<div class="dropdown header-navs-dropdown">
 						<span class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer; font-size:10px">
 							<img src="icon/icon.png" height="20px" width="20px" style="margin-top:-5px;margin-right:5px">
-							Hjasj jsadhjs asjdhk
+							<span id="profileName"></span>
+							<span class="caret"></span>
 						</span>
-						<div class="dropdown-menu">
-							<a href="" class="dropdown-item">Log Out</a>
-							<a href="" class="dropdown-item">asdqwewadasd</a>
-						</div>
+						<ul class="dropdown-menu">
+							<li><a href="" class="dropdown-item" id="btnLogOut">Log Out</a></li>
+							<li><a href="" class="dropdown-item">asdqwewadasd</a></li>
+						</ul>
 					</div>
 				</span>
 			</div>
 		</div>
 		
 		<div class="row">
-			<div class="col-2 content-navs"  style="background-color:#f5aeff;height:100%">
+			<div class="col-xs-2 content-navs"  style="background-color:#f5aeff;height:100%">
 				<div>
 					<span>
 						<a href="" style="text-decoration:none">
@@ -77,7 +82,7 @@
 					</span>
 				</div>
 			</div>
-			<div class="col-10">
+			<div class="col-xs-10">
 			
 			</div>
 		</div>

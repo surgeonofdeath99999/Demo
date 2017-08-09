@@ -13,10 +13,10 @@
 	</script>
 	
 	<!--BootstrapJS-->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	
 	<!--BootstrapCSS-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	
 	<script src="js/index.js"></script>
 	<style>
@@ -33,15 +33,15 @@
 </head>
 <body style="background:radial-gradient(#f4c5fb,#f5aeff); background: -webkit-radial-gradient(#f4c5fb,#eec5f5); background: -o-radial-gradient(#f4c5fb,#f5aeff); background: -moz-radial-gradient(#f4c5fb,#f5aeff);">
 	<div class="row">
-			<div class="col-xs-12" style="margin: 12% auto;">
+		<div class="col-xs-12" style="margin: 12% auto;">
 			<div style="margin-left:25%; margin-bottom:50px">
+				{{ csrf_field() }}
 				<a href="" title="Rookie" style="text-shadow:18px 20px 4px #ae7cb5;font-family:finitition; text-decoration:none;color:rgba(19, 17, 17, 0.63);font-size:80px; margin:0 auto">Rookie</a>
 			</div>
-			<a href="" id="btnLogin" class="btn btn-success main-button" style="font-size:18px;width:200px;background-color:rgba(245, 174, 255, 0); color:rgba(19, 17, 17, 0.79);border-color:rgba(0, 0, 0, 0.29)" data-toggle="popover" data-placement="bottom" data-html="true"
+			<a href="" id="btnLogin" data-animation="false" class="btn btn-success main-button" style="font-size:18px;width:200px;background-color:rgba(245, 174, 255, 0); color:rgba(19, 17, 17, 0.79);border-color:rgba(0, 0, 0, 0.29)" data-toggle="popover" data-placement="bottom" data-html="true"
 				data-content='<form method="post" id="loginForm">
-							{{ csrf_field() }}
 							<div class="form-group">
-								<div class="input-group">	
+								<div class="input-group">
 									<span class="input-group-addon">@</span>
 									<input type="text" class="form-control" name="username" placeholder="Username" required>
 								</div>
@@ -52,15 +52,15 @@
 									<input type="password" class="form-control" name="password" placeholder="Password" required>
 								</div>
 							</div>
+							<p id="responseMess" style="color:red; font-size:16px"></p>
 							<div class="form-group" style="float:right">
-								<input type="submit" style="width:120px" id="loginBtn" class="btn btn-default" name="submitLogin" value="Login">
+								<input type="submit" style="width:120px;cursor:pointer" class="btn btn-default" name="submitLogin" value="Login">
 							</div>
 						</form>'
 				style="width:100px; border-radius:0">Login</a>
-			<a href="" id="btnSignUp" class="btn btn-success main-button" style="font-size:18px;width:200px;background-color:rgba(245, 174, 255, 0); color:rgba(19, 17, 17, 0.79);border-color:rgba(0, 0, 0, 0.29)" data-toggle="popover" data-placement="right" data-html="true"
+			<a href="" id="btnSignUp" data-animation="false" class="btn btn-success main-button" style="font-size:18px;width:200px;background-color:rgba(245, 174, 255, 0); color:rgba(19, 17, 17, 0.79);border-color:rgba(0, 0, 0, 0.29)" data-toggle="popover" data-placement="bottom" data-html="true"
 				data-content='
 						<form method="post" id="signUpForm">
-							{{ csrf_field() }}
 							<div class="form-group">
 								<div class="input-group">	
 									<span class="input-group-addon">☺</span>
@@ -91,11 +91,13 @@
 									<input type="text" class="form-control" name="phoneNumber" placeholder="Phone Number" required>
 								</div>
 							</div>
+							<div class="form-group"><p id="reponseMessages" style="color:red; font-size:15px"></p></div>
 							<div class="form-group">
-								<input type="submit" id="signUpBtn" style="width:100%" class="btn btn-default" name="submitSignUp" value="Sign Up">
+								<input type="submit" style="width:100%;cursor:pointer" class="btn btn-default" name="submitSignUp" value="Sign Up">
 							</div>
 						</form>'
 				style="width:100px; border-radius:0">Sign Up</a>
+				<p style="text-align:center; color:#d61f19; font-size:18px; margin-top:20px" id="inactiveMess">{{ $content1 }} <br> {{$content2}}</p>
 		</div>
 	</div>
 </body>
