@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/home', function(){
-	return view('dashboard');
-});
-Route::post('/','demoController@loginProcess');
+Route::get('/', 'demoController@homeProcess');
+Route::post('/','demoController@formProcess');
+Route::post('/search','demoController@Search');
+Route::post('/friendrequestprocess','demoController@frienRequestProcess');
